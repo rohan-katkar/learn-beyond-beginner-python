@@ -1,17 +1,20 @@
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, asdict, astuple, InitVar
 
-@dataclass
+@dataclass #(frozen=True)
 class MyDataClass:
     """Class for testing dataclass"""
     name: str
     unit_price: float
     quantity_on_hand: int = 0
-    sizes: list[str] = field(default_factory=list)
+    sizes: list[str] = field(default_factory=list, repr=False)
+    internal_id: InitVar[int] = 100
 
     # Init, Represent, Equals and other magic/double-underscore methods are automatically created
 
     def total_cost(self) -> float:
         return self.unit_price * self.quantity_on_hand
+
+### Inheritance
 
 class Rectangle:
     def __init__(self, height, width):
@@ -25,8 +28,11 @@ class Square(Rectangle):
     def __post_init__(self):        # dataclass does not call and non-dataclass init method, hence explicit
         super().__init__(self.side, self.side)
 
+###
 
 if __name__ == "__main__":
     dataclass1 = MyDataClass('rohan', 100.00, 50)
-    print(dataclass1.total_cost())
-    print(dataclass1.sizes)
+    print(dataclass1)
+
+    print(asdict(dataclass1))
+    print(astuple(dataclass1))
