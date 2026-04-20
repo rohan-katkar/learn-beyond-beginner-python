@@ -32,7 +32,7 @@ class User(BaseModel):
 
 if __name__ == "__main__":
     user1 = User(username="rohan", email="rohanexample@example.com", age=38)
-    print(user1.model_dump_json())
+    print(user1.model_dump_json(indent=True))
 
     # user2 = User(username="rohan", email=None, age="old")
     # print(user2.model_dump_json())
