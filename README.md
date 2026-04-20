@@ -14,15 +14,19 @@ A concise collection of Python learning modules focused on intermediate topics: 
 
 ## Project layout (top-level files)
 
+- `README.md` — This file.
 - `python-typing.py` — Examples of type hints, generics, and typing patterns.
 - `higher-order-functions.py` — Decorators, composition, and passing functions.
 - `recursion.py` — Recursive examples, memoization patterns.
 - `classes_tutorial.py` — OOP basics and patterns.
 - `dataclass_tutorial.py` — Using `@dataclass` for concise data models.
-- `pydantic_examples.py` — Pydantic models and validation examples.
 - `class_v_dataclass.py` — Short comparisons and when to use each approach.
 - `arg_checker.py` — Small utilities for validating arguments.
 - `main.py` — Simple driver that demonstrates selected examples.
+- `pydantic-start.py` — Starter Pydantic examples showing basic model creation and validation (optional dependency).
+- `pydantic_2.py` — Additional Pydantic examples; check file headers for compatibility notes.
+- `pydantic_dataclass.py` — Examples combining dataclasses and Pydantic validation.
+- (Local artefacts) `.venv/`, `.mypy_cache/`, `__pycache__/` — Local environment and cache directories; typically excluded from commits.
 
 ## Getting started
 
